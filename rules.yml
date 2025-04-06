@@ -1,0 +1,13 @@
+
+groups:
+  - name: node_file_descriptor_usage
+    rules:
+      - record: node_file_descriptor_usage_rule
+        expr: node_filefd_allocated / node_filefd_maximum * 100
+        labels:
+          node1: node_file_descriptor_usage
+    #when you open a file, the operating system creates an entry to represent that file and store the information about that opened file. So if there are 100 files opened in your OS then there will be 100 entries in OS (somewhere in kernel). These entries are represented by integers like (...100, 101, 102....). This entry number is the file descriptor.
+
+
+
+

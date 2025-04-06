@@ -1,0 +1,10 @@
+groups:
+  - name: node_file_descriptor_usage
+    rules:
+      - alert: node_file_descriptor_usage_alert
+        expr: node_file_descriptor_usage_rule > 80
+        for: 1m
+        annotations:
+          summary: "file descriptor in {{ $labels.instance }}"
+          description: "file descriptor is {{ $value }}"
+ 
